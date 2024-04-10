@@ -50,10 +50,45 @@
             text-align: center;
             padding: 5px 0;
         }
+
+        .loader-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: flex;
+            /* Initially hidden */
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .loader {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            border: 9px solid;
+            border-color: white #0000;
+            animation: spinner-0tkp9a 1s infinite;
+        }
+
+        @keyframes spinner-0tkp9a {
+            to {
+                transform: rotate(.5turn);
+            }
+        }
     </style>
 </head>
 
 <body>
+
+
+    <div class="loader-overlay" id="loader">
+        <div class="loader"></div>
+    </div>
+
 
     <div id="greetings" class="scrollable-section m-5 text-center">
         <div class="container row">
@@ -67,7 +102,8 @@
     </div>
 
     <footer class="footer bg-black-50 text-black">
-        &copy; 2024 Made by <a href="https://daffashafwan.github.io" target="_blank" class="text-black-50 fw-bold" style="text-decoration: none;">daffashafwan</a>
+        &copy; 2024 Made by <a href="https://daffashafwan.github.io" target="_blank" class="text-black-50 fw-bold"
+            style="text-decoration: none;">daffashafwan</a>
     </footer>
 
     <!-- Bootstrap JS Bundle with Popper -->
@@ -86,6 +122,16 @@
         ];
 
         $(document).ready(function () {
+            $('#loader').show();
+
+            // Hide loader and show greetings after 2 seconds
+            setTimeout(function () {
+                $('#loader').fadeOut(1000, function () {
+                    $(this).hide()
+                });
+                $('#greetings').fadeIn();
+            }, 3000);
+
             messages.forEach(function (message, index) {
                 setTimeout(function () {
                     $('.greeting-message').fadeOut(1000, function () {
