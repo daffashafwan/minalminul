@@ -87,15 +87,11 @@
 
         $(document).ready(function () {
             messages.forEach(function (message, index) {
-                var count = index;
-                if (index == 0) {
-                    count = -1
-                }
                 setTimeout(function () {
                     $('.greeting-message').fadeOut(1000, function () {
                         $(this).text(message).fadeIn(1000);
                     });
-                }, 3000 * (count + 1));
+                }, 3000 * (index + 1));
             });
             setTimeout(function () {
                 $('.name').fadeOut(1000, function () {
