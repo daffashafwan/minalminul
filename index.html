@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eid Greetings</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap"
+        rel="stylesheet">
+
+    <style>
+        /* Custom CSS */
+        body {
+            background-color: #000000;
+            font-family: 'Josefin Sans', sans-serif;
+            color: #ffffff;
+            height: 100vh;
+            /* Set body height to viewport height */
+            display: flex;
+            /* Use flexbox for centering */
+            justify-content: center;
+            /* Horizontally center */
+            align-items: center;
+            /* Vertically center */
+        }
+
+        .scrollable-section {
+            text-align: center;
+            overflow-y: scroll;
+            max-height: 80vh;
+            /* Limit the height to 80% of viewport height */
+        }
+
+        .greeting-message {
+            font-size: 20px;
+            margin-bottom: 50px;
+            opacity: 1;
+        }
+
+        footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            color: black;
+            text-align: center;
+            padding: 5px 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="greetings" class="scrollable-section m-5 text-center">
+        <div class="container row">
+            <div class="greeting-message-outer">
+                <span class="greeting-message text-white fw-normal"></span>
+                <br>
+                <span class="name text-black-50 fw-light">daffashafwan</span>
+                <!-- Your greeting message content here -->
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer bg-black-50">
+        &copy; 2024 Made by <a href="https://daffashafwan.github.io" target="_blank" style="text-decoration: none;" class="text-black-50">daffashafwan</a>
+    </footer>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script>
+        const messages = [
+            "Tidak ada aplikasi yang tidak punya bug",
+            "Tidak ada logic yang bebas dari kemungkinan error",
+            "Tidak ada server yang tidak punya downtime",
+            "Sama seperti diri saya, pasti ada kekurangan",
+            "Jika saya adalah kesalahan saya memohon maaf",
+            "Selamat Hari Raya Idul Fitri 1445H"
+        ];
+
+        $(document).ready(function () {
+            messages.forEach(function (message, index) {
+                setTimeout(function () {
+                    $('.greeting-message').fadeOut(1000, function () {
+                        $(this).text(message).fadeIn(1000);
+                    });
+                }, 3000 * (index + 1));
+            });
+            setTimeout(function () {
+                $('.name').fadeOut(1000, function () {
+                    $(this).removeClass("text-black-50").addClass("text-white").fadeIn(1000);
+                });
+                $('.footer').fadeOut(1000, function () {
+                    $(this).removeClass("bg-black-50").addClass("bg-white").fadeIn(1000);
+                });
+            }, 20000)
+        });
+    </script>
+</body>
+
+</html>
