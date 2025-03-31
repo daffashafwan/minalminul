@@ -4,150 +4,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Minal Minul - Selamat Hari Raya Idul Fitri</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap"
-        rel="stylesheet">
-
+    <title>Minal Minul - Jedag Jedug Edition</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        /* Custom CSS */
         body {
-            background-color: #000000;
+            background-color: black;
+            color: white;
             font-family: 'Josefin Sans', sans-serif;
-            color: #ffffff;
+            text-align: center;
             height: 100vh;
-            /* Set body height to viewport height */
             display: flex;
-            /* Use flexbox for centering */
             justify-content: center;
-            /* Horizontally center */
             align-items: center;
-            /* Vertically center */
+            flex-direction: column;
+            overflow: hidden;
         }
-
-        .scrollable-section {
-            text-align: center;
-            overflow-y: scroll;
-            max-height: 80vh;
-            /* Limit the height to 80% of viewport height */
+        .greeting {
+            font-size: 24px;
+            font-weight: bold;
+            animation: blink 0.5s infinite alternate;
         }
-
-        .greeting-message {
-            font-size: 20px;
-            margin-bottom: 50px;
-            opacity: 1;
+        @keyframes blink {
+            0% { opacity: 1; }
+            100% { opacity: 0.5; }
         }
-
-        footer {
+        .beat {
+            font-size: 40px;
+            font-weight: bold;
+            text-shadow: 0 0 20px #ff00ff;
+            animation: beat 0.5s infinite alternate;
+        }
+        @keyframes beat {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.2); }
+        }
+        .footer {
             position: fixed;
-            bottom: 0;
-            width: 100%;
-            color: black;
-            text-align: center;
-            padding: 5px 0;
-        }
-
-        .loader-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
-            display: flex;
-            /* Initially hidden */
-            justify-content: center;
-            align-items: center;
-            z-index: 1000;
-        }
-
-        .loader {
-            width: 56px;
-            height: 56px;
-            border-radius: 50%;
-            border: 9px solid;
-            border-color: white #0000;
-            animation: spinner-0tkp9a 1s infinite;
-        }
-
-        @keyframes spinner-0tkp9a {
-            to {
-                transform: rotate(.5turn);
-            }
+            bottom: 10px;
+            font-size: 12px;
         }
     </style>
 </head>
 
 <body>
-
-
-    <div class="loader-overlay" id="loader">
-        <div class="loader"></div>
-    </div>
-
-
-    <div id="greetings" class="scrollable-section m-5 text-center">
-        <div class="container row">
-            <div class="greeting-message-outer">
-                <span class="greeting-message text-white fw-normal"></span>
-                <br>
-                <span class="name text-black-50 fw-light">daffashafwan</span>
-                <!-- Your greeting message content here -->
-            </div>
-        </div>
-    </div>
-
-    <footer class="footer bg-black-50 text-black">
-        &copy; 2024 Made by <a href="https://daffashafwan.github.io" target="_blank" class="text-black-50 fw-bold"
-            style="text-decoration: none;">daffashafwan</a>
-    </footer>
-
-    <!-- Bootstrap JS Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-        crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <div class="greeting" id="message">SELAMAT HARI RAYA IDUL FITRI 1446H!</div>
+    <div class="beat" id="beat">MINAL AIDIN WAL FAIZIN 🎶</div>
+    <audio autoplay loop>
+        <source src="https://www.bensound.com/bensound-music/bensound-energy.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <footer class="footer">&copy; 2025 Made by <a href="https://daffashafwan.github.io" target="_blank" class="text-white">daffashafwan</a></footer>
     <script>
-        const messages = [
-            "Tidak ada aplikasi yang tidak punya bug",
-            "Tidak ada logic yang bebas dari kemungkinan error",
-            "Tidak ada server yang tidak punya downtime",
-            "Sama seperti diri saya, pasti ada kekurangan",
-            "Jika saya adalah kesalahan saya memohon maaf",
-            "Selamat Hari Raya Idul Fitri 1445H"
+        const beats = [
+            'aku👉minta😊maaf🙏jika👍aku🙇‍♀️ada😔salah✋',
+            'karena😉tidak🌼lama☘lagi🕯lebaran📚tiba👉',
+            'maka✋dari😊itu🌵aku👨‍🦳minta😊maaf🙏',
+            'saya👴takut😣kalau😌di🎊akhirat📜nanti💞saya😢di🎊siksa',
+           '👹karena🤔belum📌mendapatkan🌴maaf 🙏dari😊kalian👨‍👩‍👦',
+            'sebarkan📱chat💌ini💛jika💞kalian👨‍👩‍👦punya😊salah😜😁'
         ];
-
-        $(document).ready(function () {
-            $('#loader').show();
-
-            // Hide loader and show greetings after 2 seconds
-            setTimeout(function () {
-                $('#loader').fadeOut(1000, function () {
-                    $(this).hide()
-                });
-                $('#greetings').fadeIn();
-            }, 3000);
-
-            messages.forEach(function (message, index) {
-                setTimeout(function () {
-                    $('.greeting-message').fadeOut(1000, function () {
-                        $(this).text(message).fadeIn(1000);
-                    });
-                }, 3000 * (index + 1));
-            });
-            setTimeout(function () {
-                $('.name').fadeOut(1000, function () {
-                    $(this).removeClass("text-black-50").addClass("text-white").fadeIn(1000);
-                });
-                $('.footer').fadeOut(1000, function () {
-                    $(this).removeClass("bg-black-50").addClass("bg-white").fadeIn(1000);
-                });
-            }, 20000)
-        });
+        let index = 0;
+        setInterval(() => {
+            document.getElementById("beat").textContent = beats[index];
+            index = (index + 1) % beats.length;
+        }, 2000);
     </script>
 </body>
 
